@@ -16,21 +16,19 @@ Rules
 6. Tasks should not (most of the time) require editing to use. So we have to write them in a way that, at least most of the time people can use them with no need to edit them. 
 7. Tasks should use Iris Init before calling commands (to handle login and session management)
 8. Tasks should use a similar icon (we can use the Iris one for now) so we can easily id them in among our other existing tasks. 
+9. First keep in mind that were calling a Non-Supported API. Try to not kill there servers.
+10. No Polling tasks in core (the kind that keep checking the API to see if something has changed, getting data is fine, getting it once every 5 seconds isn't)
  
 Examples
 ========
  
 So a simple "turn on the light task"
  
-Bad Way: Copy a task then modify it so that the task holds the login call, the API call, and a notification. 
+*Bad Way:* Copy a task then modify it so that the task holds the login call, the API call, and a notification. 
 Reason it's bad: When you need to make another turn on the light switch call you have a lot of editing, and after you have 10 of these, when the API changes. Your whole setup needs to be redone.
  
-Good Way: Create a task that calls "Iris Init" then, "Iris Switch On", then "Iris Notify" with arguments for the device id.
-Reason it's good: When the API changes you only have to modify the "Iris Init", "Iris Switch On" and "Iris Notify" commands and all your 10 switches keep working.
+*Good Way:* Create a task that calls "Iris Init" then, "Iris Switch On", then "Iris Notify" with arguments for the device id.
+
+*Reason it's good:* When the API changes you only have to modify the "Iris Init", "Iris Switch On" and "Iris Notify" commands and all your 10 switches keep working.
  
 This is tricky but becomes very important as we start adding features. For example session management (which makes MUCH faster) isn't even possible unless you use something like "Iris Init" to handle it. Same with notifications, it seems simple, but you can get much nicer and uniform notifications using a notification task instead of building a notification in every task.
- 
-Finally some rules about things not to do
- 
-9. First keep in mind that were calling a Non-Supported API. Try to not kill there servers.
-10. No Pooling tasks (the kind that keep checking the API to see if something has changed, getting data is fine, getting it once every 5 seconds isn't)
