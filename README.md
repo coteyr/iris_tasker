@@ -8,14 +8,14 @@ Third, to share ideas and concepts to create new and better tasks and automation
 Rules
 ======
 
-# All code uploaded to the repo is covered under the GPL v3. Meaning it's open for ANYONE to use. 
-# No ads or nags or such in the tasks.
-# All variable names start with iris or IRIS (depending on scope), Tasks should start with Iris. -- This helps keep the collisions down with non-iris related tasks
-# No Personal credentials (don't leave your user names and passwords (or devices) in the tasks.
-# Tasks should do one thing, and only one thing. i.e. Turning off a switch requires a login, then the command, then a notification. These should be converted to three tasks so we can reuse them later.
-# Tasks should not (most of the time) require editing to use. So we have to write them in a way that, at least most of the time people can use them with no need to edit them. 
-# Tasks should use Iris Init before calling commands (to handle login and session management)
-# Tasks should use a similar icon (we can use the Iris one for now) so we can easily id them in among our other existing tasks. 
+1. All code uploaded to the repo is covered under the GPL v3. Meaning it's open for ANYONE to use. 
+2. No ads or nags or such in the tasks.
+3. All variable names start with iris or IRIS (depending on scope), Tasks should start with Iris. -- This helps keep the collisions down with non-iris related tasks
+4. No Personal credentials (don't leave your user names and passwords (or devices) in the tasks.
+5. Tasks should do one thing, and only one thing. i.e. Turning off a switch requires a login, then the command, then a notification. These should be converted to three tasks so we can reuse them later.
+6. Tasks should not (most of the time) require editing to use. So we have to write them in a way that, at least most of the time people can use them with no need to edit them. 
+7. Tasks should use Iris Init before calling commands (to handle login and session management)
+8. Tasks should use a similar icon (we can use the Iris one for now) so we can easily id them in among our other existing tasks. 
  
 Examples
 ========
